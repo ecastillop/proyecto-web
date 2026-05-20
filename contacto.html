@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mundo Tech, tienda online de equipos y componentes tecnológicos en Lima. Catálogo, asesor de compra, carrito, contacto y contenido multimedia.">
+  <meta name="keywords" content="tienda tecnológica, ecommerce, laptops, PCs, celulares, componentes, Mundo Tech, Lima">
+  <meta name="author" content="Mundo Tech">
+  <title>Mundo Tech | Equipos y componentes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado" id="inicio">
+    <div class="contenedor barra-superior">
+      <a class="marca" href="index.html" aria-label="Ir al inicio">
+        <span class="marca-icono">MT</span>
+        <span class="marca-texto">
+          <strong>Mundo Tech</strong>
+          <small>Equipos y componentes</small>
+        </span>
+      </a>
+
+      <nav class="menu-principal" aria-label="Menú principal">
+        <a href="asesor.html">Asesor de compra</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <button class="boton boton-carrito" id="abrirCarrito" type="button" aria-label="Abrir carrito">
+        Carrito <span class="contador-carrito" id="contadorCarrito">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion" id="contacto">
+      <div class="contenedor contacto-grid">
+        <article>
+          <div class="cabecera-seccion">
+            <p class="etiqueta">Contacto</p>
+            <h2>Te ayudamos con tu compra o cotización.</h2>
+            <p>
+              Si estás armando una PC, comparando laptops o buscando stock para oficina, déjanos tus datos y te respondemos.<br>
+              Atención en Lima con soporte por WhatsApp y retiro en tienda.
+            </p>
+          </div>
+
+          <ul class="lista-contacto">
+            <li><strong>Correo:</strong> hola@mundotech.pe</li>
+            <li><strong>WhatsApp:</strong> +51 945 218 640</li>
+            <li><strong>Horario:</strong> Lunes a sábado, 10:00 a.m. - 7:30 p.m.</li>
+          </ul>
+        </article>
+
+        <form class="formulario formulario-contacto" id="formContacto">
+          <label>
+            Nombre completo
+            <input type="text" id="nombreContacto" required>
+          </label>
+
+          <label>
+            Correo electrónico
+            <input type="email" id="correoContacto" required>
+          </label>
+
+          <label>
+            Motivo de contacto
+            <select id="tipoConsulta" required>
+              <option value="">Selecciona</option>
+              <option value="Compra">Compra</option>
+              <option value="Cotización">Cotización</option>
+              <option value="Compatibilidad">Compatibilidad</option>
+              <option value="Postventa">Postventa</option>
+            </select>
+          </label>
+
+          <label>
+            Mensaje
+            <textarea id="mensajeContacto" rows="5" required placeholder="Cuéntanos qué estás buscando o qué necesitas cotizar"></textarea>
+          </label>
+
+          <button class="boton boton-primario" type="submit">Enviar mensaje</button>
+          <p class="mensaje-formulario" id="mensajeFormulario" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <aside class="panel-carrito" id="panelCarrito" aria-hidden="true">
+    <div class="carrito-encabezado">
+      <h2>Tu carrito</h2>
+      <button class="boton-cerrar" id="cerrarCarrito" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="carrito-items" id="itemsCarrito"></div>
+
+    <div class="carrito-resumen">
+      <table class="tabla-resumen">
+        <tbody>
+          <tr>
+            <th>Total</th>
+            <td id="totalCarrito">S/ 0.00</td>
+          </tr>
+          <tr>
+            <th>Unidades</th>
+            <td id="cantidadCarrito">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="boton boton-primario boton-bloque" id="procesarPedido" type="button">Confirmar pedido</button>
+      <button class="boton boton-secundario boton-bloque" id="vaciarCarrito" type="button">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <template id="plantillaProducto">
+    <article class="tarjeta-producto">
+      <div class="producto-imagen">
+        <img class="producto-foto" src="" alt="">
+      </div>
+      <div class="producto-cuerpo">
+        <div class="producto-meta">
+          <span class="producto-categoria"></span>
+          <span class="producto-nivel"></span>
+        </div>
+        <h3 class="producto-nombre"></h3>
+        <p class="producto-descripcion"></p>
+        <div class="producto-pie">
+          <strong class="producto-precio"></strong>
+          <button class="boton boton-primario boton-agregar" type="button">Agregar</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <footer class="pie-pagina">
+    <div class="contenedor pie-grid">
+      <section>
+        <h2>Mundo Tech</h2>
+        <p>Equipos, periféricos y componentes seleccionados para compra diaria, estudio, oficina y gaming.</p>
+      </section>
+
+      <section>
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html#catalogo">Catálogo</a></li>
+          <li><a href="asesor.html">Asesor de compra</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Tienda</h3>
+        <p>Av. Wilson 845, Cercado de Lima<br>Atención presencial y digital</p>
+      </section>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

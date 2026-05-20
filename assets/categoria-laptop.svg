@@ -1,0 +1,7 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="28" fill="#F4EEE6"/>
+  <rect x="132" y="90" width="376" height="214" rx="18" fill="#DCCDBC"/>
+  <rect x="152" y="110" width="336" height="174" rx="12" fill="#51453B"/>
+  <path d="M110 314H530L498 344H142L110 314Z" fill="#CFC1B3"/>
+  <text x="54" y="382" fill="#6A5E52" font-size="28" font-family="Arial, sans-serif">Laptops</text>
+</svg>
