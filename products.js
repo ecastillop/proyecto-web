@@ -8,7 +8,7 @@ const productos = [
     objetivo: ["Oficina", "Estudio", "Movilidad"],
     preferencia: ["Precio", "Portabilidad", "Equilibrio"],
     descripcion: "Ryzen 5, 8 GB RAM y SSD de 512 GB. Buena base para clases, oficina y uso diario.",
-    imagen: "assets/categoria-laptop.svg"
+    imagen: "assets/produc1.jpeg"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const productos = [
     objetivo: ["Oficina", "Estudio", "Diseño"],
     preferencia: ["Equilibrio", "Portabilidad", "Rendimiento"],
     descripcion: "Core i5, 16 GB RAM y SSD de 512 GB. Pensada para multitarea, trabajo y diseño ligero.",
-    imagen: "assets/categoria-laptop.svg"
+    imagen: "assets/produc2.jpeg"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const productos = [
     objetivo: ["Diseño", "Gaming"],
     preferencia: ["Rendimiento"],
     descripcion: "Ryzen 7, 16 GB RAM y gráfica dedicada. Ideal para edición, render y gaming exigente.",
-    imagen: "assets/categoria-laptop.svg"
+    imagen: "assets/produc3.jpeg"
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const productos = [
     objetivo: ["Oficina", "Estudio"],
     preferencia: ["Equilibrio", "Rendimiento"],
     descripcion: "Torre con Ryzen 5, 16 GB RAM y SSD NVMe. Rinde muy bien para trabajo continuo y multitarea.",
-    imagen: "assets/categoria-pc.svg"
+    imagen: "assets/produc4.jpeg"
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const productos = [
     objetivo: ["Diseño", "Gaming"],
     preferencia: ["Rendimiento"],
     descripcion: "Equipo con gráfica dedicada, 32 GB RAM y almacenamiento rápido para producción y gaming.",
-    imagen: "assets/categoria-pc.svg"
+    imagen: "assets/produc5.jpeg"
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const productos = [
     objetivo: ["Movilidad", "Estudio"],
     preferencia: ["Precio", "Portabilidad"],
     descripcion: "Pantalla amplia, batería duradera y 128 GB de almacenamiento para uso diario sin complicaciones.",
-    imagen: "assets/categoria-celular.svg"
+    imagen: "assets/produc6.jpeg"
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ const productos = [
     objetivo: ["Movilidad", "Estudio", "Oficina"],
     preferencia: ["Equilibrio", "Portabilidad"],
     descripcion: "Más memoria, mejor cámara y mejor respuesta general para productividad, contenido y movilidad.",
-    imagen: "assets/categoria-celular.svg"
+    imagen: "assets/produc7.jpeg"
   },
   {
     id: 8,
@@ -85,7 +85,7 @@ const productos = [
     objetivo: ["Oficina", "Estudio"],
     preferencia: ["Precio", "Equilibrio"],
     descripcion: "Panel IPS Full HD de 24 pulgadas para escritorio, clases, oficina y consumo multimedia.",
-    imagen: "assets/categoria-monitor.svg"
+    imagen: "assets/produc8.jpeg"
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ const productos = [
     objetivo: ["Diseño", "Oficina", "Gaming"],
     preferencia: ["Equilibrio", "Rendimiento"],
     descripcion: "Más área de trabajo y mejor definición para edición, productividad y entretenimiento.",
-    imagen: "assets/categoria-monitor.svg"
+    imagen: "assets/produc9.jpeg"
   },
   {
     id: 10,
@@ -107,7 +107,7 @@ const productos = [
     objetivo: ["Oficina", "Estudio", "Gaming"],
     preferencia: ["Precio", "Equilibrio"],
     descripcion: "Una mejora simple y efectiva para acelerar el inicio del sistema y la carga de programas.",
-    imagen: "assets/categoria-componente.svg"
+    imagen: "assets/produc10.jpeg"
   },
   {
     id: 11,
@@ -118,7 +118,7 @@ const productos = [
     objetivo: ["Oficina", "Diseño", "Gaming"],
     preferencia: ["Equilibrio", "Rendimiento"],
     descripcion: "Más capacidad y mejor margen para proyectos, juegos, archivos pesados y trabajo continuo.",
-    imagen: "assets/categoria-componente.svg"
+    imagen: "assets/produc11.jpeg"
   },
   {
     id: 12,
@@ -129,7 +129,7 @@ const productos = [
     objetivo: ["Oficina", "Diseño", "Gaming"],
     preferencia: ["Equilibrio", "Rendimiento"],
     descripcion: "Kit 2x8 GB para mejorar multitarea y dar mayor soltura a programas de uso intensivo.",
-    imagen: "assets/categoria-componente.svg"
+    imagen: "assets/produc12.jpeg"
   },
   {
     id: 13,
@@ -140,7 +140,7 @@ const productos = [
     objetivo: ["Gaming", "Diseño"],
     preferencia: ["Rendimiento"],
     descripcion: "Gráfica dedicada para render, creación de contenido y juegos con mayor exigencia gráfica.",
-    imagen: "assets/categoria-componente.svg"
+    imagen: "assets/produc13.jpeg"
   },
   {
     id: 14,
@@ -151,7 +151,7 @@ const productos = [
     objetivo: ["Oficina", "Gaming", "Estudio"],
     preferencia: ["Equilibrio", "Portabilidad"],
     descripcion: "Perfil delgado, buena respuesta al tacto y estética limpia para escritorio de trabajo.",
-    imagen: "assets/categoria-accesorio.svg"
+    imagen: "assets/produc14.jpeg"
   },
   {
     id: 15,
@@ -162,7 +162,7 @@ const productos = [
     objetivo: ["Oficina", "Estudio", "Movilidad"],
     preferencia: ["Precio", "Portabilidad"],
     descripcion: "Mouse inalámbrico cómodo, práctico y fácil de llevar para trabajo y clases.",
-    imagen: "assets/categoria-accesorio.svg"
+    imagen: "assets/produc15.jpeg"
   },
   {
     id: 16,
@@ -173,6 +173,6 @@ const productos = [
     objetivo: ["Gaming"],
     preferencia: ["Equilibrio", "Rendimiento"],
     descripcion: "Set con teclado, mouse y audífonos para completar una base gamer sin comprar por separado.",
-    imagen: "assets/categoria-accesorio.svg"
+    imagen: "assets/produc16.jpeg"
   }
 ];
