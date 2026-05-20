@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const formContacto = document.getElementById("formContacto");
   const mensajeFormulario = document.getElementById("mensajeFormulario");
 
-  const CLAVE_CARRITO = "mundo-tech-real-cart";
+  const CLAVE_CARRITO = "mundo-tech-cart";
   let carrito = JSON.parse(localStorage.getItem(CLAVE_CARRITO)) || [];
 
   function formatearMoneda(valor) {
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Tu carrito todavía está vacío.");
       return;
     }
-    alert("Tu pedido fue registrado correctamente. En una tienda real, aquí seguiría el proceso de pago o coordinación.");
+    alert("Tu pedido fue registrado correctamente.");
     limpiarCarrito();
     cerrarPanelCarrito();
   }
