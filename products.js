@@ -1,7 +1,7 @@
 const productos = [
   {
     id: 1,
-    nombre: "Notebook Pulse 14",
+    nombre: "HP",
     categoria: "Laptops",
     nivel: "Básico",
     precio: 1699,
@@ -12,7 +12,7 @@ const productos = [
   },
   {
     id: 2,
-    nombre: "Notebook Frame 15",
+    nombre: "HP",
     categoria: "Laptops",
     nivel: "Intermedio",
     precio: 2699,
@@ -23,7 +23,7 @@ const productos = [
   },
   {
     id: 3,
-    nombre: "Notebook Creator 16",
+    nombre: "acer nitro",
     categoria: "Laptops",
     nivel: "Avanzado",
     precio: 4199,
@@ -34,7 +34,7 @@ const productos = [
   },
   {
     id: 4,
-    nombre: "PC WorkStation A5",
+    nombre: "CPU armada",
     categoria: "PC",
     nivel: "Intermedio",
     precio: 2899,
@@ -45,7 +45,7 @@ const productos = [
   },
   {
     id: 5,
-    nombre: "PC Studio RTX",
+    nombre: "CPU-RTX armada",
     categoria: "PC",
     nivel: "Avanzado",
     precio: 4899,
@@ -56,7 +56,7 @@ const productos = [
   },
   {
     id: 6,
-    nombre: "Celular Orbit 128",
+    nombre: " Xiaomi Redmi 15",
     categoria: "Celulares",
     nivel: "Básico",
     precio: 899,
@@ -67,18 +67,18 @@ const productos = [
   },
   {
     id: 7,
-    nombre: "Celular Orbit Pro 256",
+    nombre: "Tecno SPARK 30C",
     categoria: "Celulares",
     nivel: "Intermedio",
     precio: 1599,
     objetivo: ["Movilidad", "Estudio", "Oficina"],
     preferencia: ["Equilibrio", "Portabilidad"],
-    descripcion: "Más memoria, mejor cámara y mejor respuesta general para productividad, contenido y movilidad.",
+    descripcion: "memoria de 256GB, cámara trasera 50MP, frontal 8MP y mejor respuesta general para productividad, contenido y movilidad.",
     imagen: "assets/produc7.jpeg"
   },
   {
     id: 8,
-    nombre: "Monitor View 24 IPS",
+    nombre: "Monitor LG",
     categoria: "Monitores",
     nivel: "Básico",
     precio: 599,
@@ -89,7 +89,7 @@ const productos = [
   },
   {
     id: 9,
-    nombre: "Monitor View 27 QHD",
+    nombre: "ViewSonic ColorPro VP2785-4K",
     categoria: "Monitores",
     nivel: "Intermedio",
     precio: 1299,
@@ -100,7 +100,7 @@ const productos = [
   },
   {
     id: 10,
-    nombre: "SSD NVMe 500 GB",
+    nombre: "SSD KINGSTON 500GB",
     categoria: "Componentes",
     nivel: "Básico",
     precio: 229,
@@ -111,7 +111,7 @@ const productos = [
   },
   {
     id: 11,
-    nombre: "SSD NVMe 1 TB",
+    nombre: "SSD KINGSTON 1TB",
     categoria: "Componentes",
     nivel: "Intermedio",
     precio: 419,
@@ -122,7 +122,7 @@ const productos = [
   },
   {
     id: 12,
-    nombre: "RAM DDR4 16 GB Kit",
+    nombre: "Kingston DDR4 ",
     categoria: "Componentes",
     nivel: "Intermedio",
     precio: 329,
@@ -133,7 +133,7 @@ const productos = [
   },
   {
     id: 13,
-    nombre: "GPU Orbit 12 GB",
+    nombre: "GeForce RTX 2080",
     categoria: "Componentes",
     nivel: "Avanzado",
     precio: 2799,
@@ -144,7 +144,7 @@ const productos = [
   },
   {
     id: 14,
-    nombre: "Teclado Slim Pro",
+    nombre: "AZIO Cascade Slim",
     categoria: "Accesorios",
     nivel: "Intermedio",
     precio: 249,
@@ -155,7 +155,7 @@ const productos = [
   },
   {
     id: 15,
-    nombre: "Mouse Ergo Wireless",
+    nombre: "Logitech Ergo M575",
     categoria: "Accesorios",
     nivel: "Básico",
     precio: 119,
@@ -166,7 +166,7 @@ const productos = [
   },
   {
     id: 16,
-    nombre: "Combo Gamer Shadow",
+    nombre: "Combo Gamer",
     categoria: "Accesorios",
     nivel: "Intermedio",
     precio: 499,

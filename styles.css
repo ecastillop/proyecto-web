@@ -441,13 +441,20 @@ textarea:focus {
 
 .producto-imagen {
   aspect-ratio: 16 / 11;
-  background: linear-gradient(135deg, #efe3d5, #c9b8a4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+  padding: 12px;
 }
 
 .producto-foto {
-  width: 100%;
+ width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .producto-cuerpo {
