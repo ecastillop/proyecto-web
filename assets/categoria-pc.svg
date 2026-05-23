@@ -1,0 +1,9 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="28" fill="#F4EEE6"/>
+  <rect x="110" y="84" width="284" height="220" rx="18" fill="#D8C9B8"/>
+  <rect x="420" y="120" width="112" height="184" rx="14" fill="#5A4E44"/>
+  <circle cx="476" cy="162" r="10" fill="#E7DBCF"/>
+  <rect x="450" y="206" width="52" height="10" rx="5" fill="#E7DBCF"/>
+  <rect x="450" y="228" width="52" height="10" rx="5" fill="#E7DBCF"/>
+  <text x="54" y="382" fill="#6A5E52" font-size="28" font-family="Arial, sans-serif">PC de escritorio</text>
+</svg>

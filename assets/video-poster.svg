@@ -1,0 +1,7 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" fill="#F2EADF"/>
+  <rect x="140" y="110" width="1000" height="500" rx="28" fill="#FFF8F0" stroke="#D8C8B7"/>
+  <circle cx="640" cy="360" r="72" fill="#6A5E52"/>
+  <path d="M620 326L686 360L620 394V326Z" fill="#F8F3ED"/>
+  <text x="178" y="598" fill="#6A5E52" font-size="38" font-family="Georgia, serif">Presentación de Mundo Tech</text>
+</svg>
