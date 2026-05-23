@@ -1,8 +1,0 @@
-<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="420" rx="28" fill="#F4EEE6"/>
-  <rect x="160" y="112" width="164" height="112" rx="52" fill="#DCCDBC"/>
-  <circle cx="226" cy="168" r="18" fill="#51453B"/>
-  <rect x="334" y="116" width="146" height="168" rx="18" fill="#CFC0B0"/>
-  <rect x="360" y="144" width="94" height="116" rx="12" fill="#51453B"/>
-  <text x="54" y="382" fill="#6A5E52" font-size="28" font-family="Arial, sans-serif">Accesorios</text>
-</svg>
