@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mundo Tech, tienda online de equipos y componentes tecnológicos en Lima. Catálogo, asesor de compra, carrito, contacto y contenido multimedia.">
+  <meta name="keywords" content="tienda tecnológica, ecommerce, laptops, PCs, celulares, componentes, Mundo Tech, Lima">
+  <meta name="author" content="Mundo Tech">
+  <title>Mundo Tech | Equipos y componentes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado" id="inicio">
+    <div class="contenedor barra-superior">
+      <a class="marca" href="index.html" aria-label="Ir al inicio">
+        <span class="marca-icono">MT</span>
+        <span class="marca-texto">
+          <strong>Mundo Tech</strong>
+          <small>Equipos y componentes</small>
+        </span>
+      </a>
+
+      <nav class="menu-principal" aria-label="Menú principal">
+        <a href="asesor.html">Asesor de compra</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ofertas.html">Ofertas</a>
+      </nav>
+
+      <button class="boton boton-carrito" id="abrirCarrito" type="button" aria-label="Abrir carrito">
+        Carrito <span class="contador-carrito" id="contadorCarrito">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="contenedor hero-grid">
+        <article class="hero-texto">
+          <p class="etiqueta">Mundo Tech · Lima</p>
+          <h1>Tecnología para trabajo, estudio y gaming, en una compra más clara.</h1>
+          <p>
+            En Mundo Tech reunimos laptops, PCs, celulares, monitores y componentes con una vitrina ordenada,
+            precios visibles y una guía simple para quien todavía no tiene claro qué elegir.
+          </p>
+
+          <div class="acciones-hero">
+            <a class="boton boton-primario" href="#catalogo">Explorar catálogo</a>
+            <a class="boton boton-secundario" href="asesor.html">Recibir sugerencia</a>
+          </div>
+
+          <ul class="metricas">
+            <li><strong>16</strong><span>productos destacados</span></li>
+            <li><strong>3</strong><span>rangos de compra</span></li>
+            <li><strong>Lima</strong><span>retiro y atención digital</span></li>
+          </ul>
+        </article>
+
+        <aside class="hero-media">
+          <picture>
+            <source media="(max-width: 720px)" srcset="assets/hero-mobile.svg">
+            <img src="assets/mesa.png" alt="Mesa de trabajo con laptop, monitor y accesorios de Mundo Tech" class="hero-imagen">
+          </picture>
+        </aside>
+      </div>
+    </section>
+
+    <section class="seccion seccion-suave" id="beneficios">
+      <div class="contenedor">
+        <div class="cabecera-seccion">
+          <p class="etiqueta">Por qué comprar aquí</p>
+          <h2>Una tienda que vende, orienta y evita compras a ciegas.</h2>
+          <p>
+            No todo cliente llega sabiendo qué modelo o componente le conviene. Por eso la web mezcla catálogo,
+            filtros y una recomendación guiada para ayudar a decidir sin depender de una conversación larga por chat.
+          </p>
+        </div>
+
+        <div class="beneficios-grid">
+          <article class="tarjeta-info">
+            <img src="assets/catalogo.png" alt="Icono de catálogo digital" class="icono-svg">
+            <h3>Catálogo ordenado</h3>
+            <p>Productos por categoría, nivel de uso y precio, con descripciones breves y directas.</p>
+          </article>
+
+          <article class="tarjeta-info">
+            <img src="assets/asesor.png " alt="Icono de asesor de compra" class="icono-svg">
+            <h3>Asesor de compra</h3>
+            <p>El sistema sugiere opciones según presupuesto, finalidad de uso y prioridad de compra.</p>
+          </article>
+
+          <article class="tarjeta-info">
+            <img src="assets/escudo.png" alt="Icono de confianza y atención" class="icono-svg">
+            <h3>Atención más simple</h3>
+            <p>Menos ida y vuelta por WhatsApp y más información útil desde la primera visita.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="catalogo">
+      <div class="contenedor">
+        <div class="cabecera-seccion cabecera-horizontal">
+          <div>
+            <p class="etiqueta">Catálogo</p>
+            <h2>Lo más buscado en tienda</h2>
+          </div>
+          <p class="texto-apoyo">Filtra por categoría, nivel o nombre para ubicar más rápido lo que necesitas.</p>
+        </div>
+
+        <form class="barra-filtros" id="formFiltros" aria-label="Filtros del catálogo">
+          <label>
+            Categoría
+            <select id="filtroCategoria" name="categoria">
+              <option value="all">Todas</option>
+            </select>
+          </label>
+
+          <label>
+            Nivel
+            <select id="filtroNivel" name="nivel">
+              <option value="all">Todos</option>
+              <option value="Básico">Básico</option>
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+            </select>
+          </label>
+
+          <label>
+            Buscar
+            <input id="filtroBusqueda" name="busqueda" type="search" placeholder="Ej. laptop, SSD, monitor, celular">
+          </label>
+        </form>
+
+        <div class="catalogo-grid" id="grillaProductos" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="panel-carrito" id="panelCarrito" aria-hidden="true">
+    <div class="carrito-encabezado">
+      <h2>Tu carrito</h2>
+      <button class="boton-cerrar" id="cerrarCarrito" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="carrito-items" id="itemsCarrito"></div>
+
+    <div class="carrito-resumen">
+      <table class="tabla-resumen">
+        <tbody>
+          <tr>
+            <th>Total</th>
+            <td id="totalCarrito">S/ 0.00</td>
+          </tr>
+          <tr>
+            <th>Unidades</th>
+            <td id="cantidadCarrito">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="boton boton-primario boton-bloque" id="procesarPedido" type="button">Confirmar pedido</button>
+      <button class="boton boton-secundario boton-bloque" id="vaciarCarrito" type="button">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <template id="plantillaProducto">
+    <article class="tarjeta-producto">
+      <div class="producto-imagen">
+        <img class="producto-foto" src="" alt="">
+      </div>
+      <div class="producto-cuerpo">
+        <div class="producto-meta">
+          <span class="producto-categoria"></span>
+          <span class="producto-nivel"></span>
+        </div>
+        <h3 class="producto-nombre"></h3>
+        <p class="producto-descripcion"></p>
+        <div class="producto-pie">
+          <strong class="producto-precio"></strong>
+          <button class="boton boton-primario boton-agregar" type="button">Agregar</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+<section class="barra-beneficios">
+
+  <div class="beneficio-item">
+    <img src="assets/icon-envio.svg" alt="">
+    
+    <div>
+      <strong>Envíos a todo el Perú</strong>
+      <p>Llegamos a donde estés</p>
+    </div>
+  </div>
+
+  <div class="beneficio-item">
+    <img src="assets/seguridad.svg" alt="">
+    
+    <div>
+      <strong>Compra segura</strong>
+      <p>Protegemos tus datos</p>
+    </div>
+  </div>
+
+  <div class="beneficio-item">
+    <img src="assets/garantia.svg" alt="">
+    
+    <div>
+      <strong>Garantía oficial</strong>
+      <p>Productos 100% originales</p>
+    </div>
+  </div>
+
+  <div class="beneficio-item">
+    <img src="assets/soporte.png" alt="">
+    
+    <div>
+      <strong>Soporte especializado</strong>
+      <p>Estamos para ayudarte</p>
+    </div>
+  </div>
+
+</section>
+
+  <footer class="pie-pagina">
+    <div class="contenedor pie-grid">
+      <section>
+        <h2>Mundo Tech</h2>
+        <p>Equipos, periféricos y componentes seleccionados para compra diaria, estudio, oficina y gaming.</p>
+      </section>
+
+      <section>
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html#catalogo">Catálogo</a></li>
+          <li><a href="asesor.html">Asesor de compra</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Tienda</h3>
+        <p>Av. Wilson 845, Cercado de Lima<br>Atención presencial y digital</p>
+      </section>
+    </div>
+  </footer>
+  
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

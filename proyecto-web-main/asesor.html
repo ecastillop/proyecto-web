@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mundo Tech, tienda online de equipos y componentes tecnológicos en Lima. Catálogo, asesor de compra, carrito, contacto y contenido multimedia.">
+  <meta name="keywords" content="tienda tecnológica, ecommerce, laptops, PCs, celulares, componentes, Mundo Tech, Lima">
+  <meta name="author" content="Mundo Tech">
+  <title>Mundo Tech | Equipos y componentes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado" id="inicio">
+    <div class="contenedor barra-superior">
+      <a class="marca" href="index.html" aria-label="Ir al inicio">
+        <span class="marca-icono">MT</span>
+        <span class="marca-texto">
+          <strong>Mundo Tech</strong>
+          <small>Equipos y componentes</small>
+        </span>
+      </a>
+
+      <nav class="menu-principal" aria-label="Menú principal">
+        <a href="asesor.html">Asesor de compra</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ofertas.html">Ofertas</a>
+      </nav>
+
+      <button class="boton boton-carrito" id="abrirCarrito" type="button" aria-label="Abrir carrito">
+        Carrito <span class="contador-carrito" id="contadorCarrito">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion seccion-suave" id="asesor">
+      <div class="contenedor recomendador-grid">
+        <article>
+          <div class="cabecera-seccion">
+            <p class="etiqueta">Compra guiada</p>
+            <h2>¿No sabes qué elegir? Empieza por aquí.</h2>
+            <p>
+              Indica cuánto piensas gastar, para qué vas a usar el equipo y qué valoras más. Con eso,
+              la web te propone una selección pensada para un perfil básico, intermedio o avanzado.
+            </p>
+          </div>
+
+          <form class="formulario" id="formRecomendador">
+            <label>
+              Presupuesto máximo (S/)
+              <input type="number" id="entradaPresupuesto" min="600" step="50" placeholder="Ej. 2500" required>
+            </label>
+
+            <label>
+              Uso principal
+              <select id="entradaObjetivo" required>
+                <option value="">Selecciona</option>
+                <option value="Oficina">Oficina</option>
+                <option value="Estudio">Estudio</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Diseño">Diseño</option>
+                <option value="Movilidad">Movilidad</option>
+              </select>
+            </label>
+
+            <label>
+              Qué priorizas
+              <select id="entradaPreferencia" required>
+                <option value="">Selecciona</option>
+                <option value="Precio">Gastar menos</option>
+                <option value="Equilibrio">Mantener equilibrio</option>
+                <option value="Rendimiento">Rendimiento</option>
+                <option value="Portabilidad">Portabilidad</option>
+              </select>
+            </label>
+
+            <button class="boton boton-primario" type="submit">Ver recomendación</button>
+          </form>
+        </article>
+
+        <aside class="panel-resultado" id="panelResultado" aria-live="polite">
+          <div class="estado-vacio">
+            <p class="etiqueta">Sugerencia</p>
+            <h3>Aquí aparecerá tu selección recomendada.</h3>
+            <p>Completa el formulario para ver opciones compatibles con tu presupuesto y tu tipo de uso.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="seccion" id="tabla">
+      <div class="contenedor">
+        <div class="cabecera-seccion">
+          <p class="etiqueta">Guía rápida</p>
+          <h2>Una referencia sencilla antes de comprar</h2>
+          <p>
+            Esta tabla resume qué esperar en cada rango de compra y ayuda a comparar opciones sin revisar producto por producto.
+          </p>
+        </div>
+
+        <div class="tabla-contenedor">
+          <table class="tabla-paquetes">
+            <caption>Resumen general de compra en Mundo Tech</caption>
+            <thead>
+              <tr>
+                <th>Rango</th>
+                <th>Presupuesto</th>
+                <th>Uso recomendado</th>
+                <th>Qué suele incluir</th>
+                <th>Punto fuerte</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Básico</td>
+                <td>S/ 600 - S/ 1,800</td>
+                <td>Oficina, estudio y uso diario</td>
+                <td>Laptop de entrada, SSD, monitor 24" o celular funcional</td>
+                <td>Ahorro y practicidad</td>
+              </tr>
+              <tr>
+                <td>Intermedio</td>
+                <td>S/ 1,801 - S/ 3,500</td>
+                <td>Multitarea, clases, trabajo y gaming casual</td>
+                <td>Laptop balanceada, monitor QHD, RAM 16 GB, PC de oficina</td>
+                <td>Buen equilibrio</td>
+              </tr>
+              <tr>
+                <td>Avanzado</td>
+                <td>Más de S/ 3,500</td>
+                <td>Diseño, gaming exigente y alto rendimiento</td>
+                <td>PC potente, laptop creator o GPU dedicada</td>
+                <td>Potencia y proyección</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="panel-carrito" id="panelCarrito" aria-hidden="true">
+    <div class="carrito-encabezado">
+      <h2>Tu carrito</h2>
+      <button class="boton-cerrar" id="cerrarCarrito" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="carrito-items" id="itemsCarrito"></div>
+
+    <div class="carrito-resumen">
+      <table class="tabla-resumen">
+        <tbody>
+          <tr>
+            <th>Total</th>
+            <td id="totalCarrito">S/ 0.00</td>
+          </tr>
+          <tr>
+            <th>Unidades</th>
+            <td id="cantidadCarrito">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="boton boton-primario boton-bloque" id="procesarPedido" type="button">Confirmar pedido</button>
+      <button class="boton boton-secundario boton-bloque" id="vaciarCarrito" type="button">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <template id="plantillaProducto">
+    <article class="tarjeta-producto">
+      <div class="producto-imagen">
+        <img class="producto-foto" src="" alt="">
+      </div>
+      <div class="producto-cuerpo">
+        <div class="producto-meta">
+          <span class="producto-categoria"></span>
+          <span class="producto-nivel"></span>
+        </div>
+        <h3 class="producto-nombre"></h3>
+        <p class="producto-descripcion"></p>
+        <div class="producto-pie">
+          <strong class="producto-precio"></strong>
+          <button class="boton boton-primario boton-agregar" type="button">Agregar</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <footer class="pie-pagina">
+    <div class="contenedor pie-grid">
+      <section>
+        <h2>Mundo Tech</h2>
+        <p>Equipos, periféricos y componentes seleccionados para compra diaria, estudio, oficina y gaming.</p>
+      </section>
+
+      <section>
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html#catalogo">Catálogo</a></li>
+          <li><a href="asesor.html">Asesor de compra</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Tienda</h3>
+        <p>Av. Wilson 845, Cercado de Lima<br>Atención presencial y digital</p>
+      </section>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

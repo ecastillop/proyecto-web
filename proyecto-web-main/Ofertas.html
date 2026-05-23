@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ofertas | Mundo Tech</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="encabezado" id="inicio">
+
+    <div class="contenedor barra-superior">
+
+      <a class="marca" href="index.html" aria-label="Ir al inicio">
+
+        <span class="marca-icono">MT</span>
+
+        <span class="marca-texto">
+          <strong>Mundo Tech</strong>
+          <small>Equipos y componentes</small>
+        </span>
+
+      </a>
+
+      <nav class="menu-principal" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ofertas.html">Ofertas</a>
+      </nav>
+
+      <button class="boton boton-carrito" id="abrirCarrito" type="button" aria-label="Abrir carrito">
+        Carrito <span class="contador-carrito" id="contadorCarrito">0</span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="seccion seccion-ofertas">
+
+      <div class="contenedor ofertas-contenido">
+
+        <p class="etiqueta">Ofertas</p>
+
+        <h2>Más ofertas y promociones muy pronto.</h2>
+
+        <p class="texto-ofertas">
+          Estamos trabajando en nuevas promociones, descuentos y paquetes tecnológicos
+          para seguir mejorando la experiencia de compra en Mundo Tech.
+        </p>
+
+        <div class="estado-ofertas">
+          <span class="punto-activo"></span>
+          Sección en proceso de implementación
+        </div>
+
+        <a href="index.html#catalogo" class="boton boton-primario">
+          Ver catálogo actual
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <aside class="panel-carrito" id="panelCarrito" aria-hidden="true">
+
+    <div class="carrito-encabezado">
+
+      <h2>Tu carrito</h2>
+
+      <button class="boton-cerrar" id="cerrarCarrito" type="button" aria-label="Cerrar carrito">
+        ×
+      </button>
+
+    </div>
+
+    <div class="carrito-items" id="itemsCarrito"></div>
+
+    <div class="carrito-resumen">
+
+      <table class="tabla-resumen">
+
+        <tbody>
+
+          <tr>
+            <th>Total</th>
+            <td id="totalCarrito">S/ 0.00</td>
+          </tr>
+
+          <tr>
+            <th>Unidades</th>
+            <td id="cantidadCarrito">0</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <button class="boton boton-primario boton-bloque" id="procesarPedido" type="button">
+        Confirmar pedido
+      </button>
+
+      <button class="boton boton-secundario boton-bloque" id="vaciarCarrito" type="button">
+        Vaciar carrito
+      </button>
+
+    </div>
+
+  </aside>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <template id="plantillaProducto">
+
+    <article class="tarjeta-producto">
+
+      <div class="producto-imagen">
+        <img class="producto-foto" src="" alt="">
+      </div>
+
+      <div class="producto-cuerpo">
+
+        <div class="producto-meta">
+          <span class="producto-categoria"></span>
+          <span class="producto-nivel"></span>
+        </div>
+
+        <h3 class="producto-nombre"></h3>
+
+        <p class="producto-descripcion"></p>
+
+        <div class="producto-pie">
+
+          <strong class="producto-precio"></strong>
+
+          <button class="boton boton-primario boton-agregar" type="button">
+            Agregar
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </template>
+
+  <footer class="pie-pagina">
+
+    <div class="contenedor pie-grid">
+
+      <section>
+
+        <h2>Mundo Tech</h2>
+
+        <p>
+          Equipos, periféricos y componentes seleccionados
+          para compra diaria, estudio, oficina y gaming.
+        </p>
+
+      </section>
+
+      <section>
+
+        <h3>Navegación</h3>
+
+        <ul>
+          <li><a href="index.html#catalogo">Catálogo</a></li>
+          <li><a href="multimedia.html">Multimedia</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+      </section>
+
+      <section>
+
+        <h3>Tienda</h3>
+
+        <p>
+          Av. Wilson 845, Cercado de Lima
+          <br>
+          Atención presencial y digital
+        </p>
+
+      </section>
+
+    </div>
+
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
+
