@@ -1,0 +1,102 @@
+@startuml er-mundo-tech
+skinparam linetype ortho
+title Modelo de datos - mundo_tech
+
+entity categorias {
+  * id_categoria : INT <<PK>>
+  --
+  nombre : VARCHAR(60)
+  descripcion : VARCHAR(255)
+  activo : TINYINT(1)
+}
+
+entity productos {
+  * id_producto : INT <<PK>>
+  --
+  id_categoria : INT <<FK>>
+  nombre : VARCHAR(120)
+  nivel : ENUM
+  precio : DECIMAL(10,2)
+  descripcion : TEXT
+  imagen : VARCHAR(255)
+  stock : INT
+  activo : TINYINT(1)
+  fecha_registro : TIMESTAMP
+}
+
+entity objetivos {
+  * id_objetivo : INT <<PK>>
+  --
+  nombre : VARCHAR(50)
+}
+
+entity preferencias {
+  * id_preferencia : INT <<PK>>
+  --
+  nombre : VARCHAR(50)
+}
+
+entity producto_objetivo {
+  * id_producto : INT <<FK>>
+  * id_objetivo : INT <<FK>>
+}
+
+entity producto_preferencia {
+  * id_producto : INT <<FK>>
+  * id_preferencia : INT <<FK>>
+}
+
+entity usuarios {
+  * id_usuario : INT <<PK>>
+  --
+  nombre : VARCHAR(100)
+  correo : VARCHAR(120)
+  contrasena : VARCHAR(255)
+  rol : ENUM
+  activo : TINYINT(1)
+  fecha_registro : TIMESTAMP
+}
+
+entity pedidos {
+  * id_pedido : INT <<PK>>
+  --
+  id_usuario : INT <<FK>>
+  nombre_cliente : VARCHAR(100)
+  correo_cliente : VARCHAR(120)
+  telefono : VARCHAR(20)
+  direccion : TEXT
+  total : DECIMAL(10,2)
+  estado : ENUM
+  fecha_pedido : TIMESTAMP
+}
+
+entity detalle_pedido {
+  * id_detalle : INT <<PK>>
+  --
+  id_pedido : INT <<FK>>
+  id_producto : INT <<FK>>
+  cantidad : INT
+  precio_unitario : DECIMAL(10,2)
+  subtotal : DECIMAL(10,2)
+}
+
+entity contactos {
+  * id_contacto : INT <<PK>>
+  --
+  nombre : VARCHAR(100)
+  correo : VARCHAR(120)
+  tipo_consulta : VARCHAR(50)
+  mensaje : TEXT
+  fecha_envio : TIMESTAMP
+}
+
+categorias ||--o{ productos : clasifica
+productos ||--o{ producto_objetivo : tiene
+objetivos ||--o{ producto_objetivo : aplica
+productos ||--o{ producto_preferencia : tiene
+preferencias ||--o{ producto_preferencia : aplica
+usuarios ||--o{ pedidos : realiza
+pedidos ||--|{ detalle_pedido : contiene
+productos ||--o{ detalle_pedido : incluye
+
+@enduml

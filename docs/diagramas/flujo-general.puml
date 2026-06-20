@@ -1,0 +1,44 @@
+@startuml flujo-general
+skinparam componentStyle rectangle
+title Arquitectura funcional - Mundo Tech
+
+actor "Cliente" as Cliente
+actor "Administrador" as Admin
+
+rectangle "Canal digital" {
+  component "Interfaz de tienda\nCatalogo, asesor, carrito, contacto" as Tienda
+  component "Carrito temporal\nSesion del navegador" as Carrito
+}
+
+rectangle "Servicios de negocio" {
+  component "API de catalogo y ventas" as ApiVentas
+  component "Panel de administracion" as Panel
+}
+
+database "Persistencia\nMySQL mundo_tech" as BD
+
+Cliente --> Tienda : Explora y compra
+Tienda --> Carrito : Guarda seleccion
+Tienda --> ApiVentas : Registra pedidos y consultas
+ApiVentas --> BD : Consultas y transacciones
+BD --> ApiVentas : Datos del negocio
+ApiVentas --> Tienda : Respuestas de operacion
+
+Admin --> Panel : Autenticacion y gestion
+Panel --> BD : Productos, pedidos y estados
+
+note bottom of Tienda
+  Capa tecnica: HTML, CSS, Bootstrap, JavaScript
+  Modales para checkout y mensajes al usuario
+end note
+
+note bottom of ApiVentas
+  Capa tecnica: PHP 8 + PDO, endpoints REST JSON
+end note
+
+note bottom of Panel
+  Capa tecnica: PHP con sesiones, admin/login.php,
+  admin/productos.php, admin/pedidos.php
+end note
+
+@enduml

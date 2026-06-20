@@ -1,4 +1,4 @@
-const productos = [
+const productosLocal = [
   {
     id: 1,
     nombre: "Notebook Pulse 14",

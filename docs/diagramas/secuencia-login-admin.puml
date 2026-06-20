@@ -1,0 +1,32 @@
+@startuml secuencia-login-admin
+title Autenticacion del administrador
+
+actor Administrador
+participant "Portal de acceso" as ACC
+participant "Servicio de autenticacion" as AUTH
+participant "Panel administrativo" as PNL
+database "Base de datos" as BD
+
+Administrador -> ACC : Ingresa correo y contrasena
+ACC -> AUTH : Valida credenciales
+AUTH -> BD : Busca usuario activo
+BD --> AUTH : Datos del usuario y hash de contrasena
+AUTH -> AUTH : Verifica contrasena y rol
+
+alt Credenciales validas de administrador
+  AUTH -> AUTH : Crea sesion segura
+  AUTH --> PNL : Autoriza acceso al panel
+  PNL -> BD : Consulta informacion operativa
+  BD --> PNL : Datos de gestion
+  PNL --> Administrador : Muestra panel de administracion
+else Credenciales invalidas o sin permisos
+  AUTH --> ACC : Rechaza acceso
+  ACC --> Administrador : Informa error de autenticacion
+end
+
+note over ACC, BD
+  Referencia tecnica: admin/login.php, password_verify,
+  sesiones PHP, admin/productos.php
+end note
+
+@enduml

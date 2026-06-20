@@ -1,0 +1,25 @@
+@startuml secuencia-filtros
+title Busqueda y filtrado del catalogo
+
+actor Cliente
+participant "Interfaz de tienda" as UI
+participant "Motor de filtros" as FIL
+
+Cliente -> UI : Define categoria, nivel o texto de busqueda
+UI -> FIL : Aplica criterios de filtrado
+FIL -> FIL : Evalua coincidencias sobre catalogo cargado
+
+alt Existen coincidencias
+  FIL --> UI : Lista filtrada de productos
+  UI --> Cliente : Muestra resultados encontrados
+else No hay coincidencias
+  FIL --> UI : Resultado vacio
+  UI --> Cliente : Informa que no hay productos coincidentes
+end
+
+note over UI, FIL
+  Referencia tecnica: filtros en index.html,
+  app.js obtieneProductosFiltrados y renderizarProductos
+end note
+
+@enduml

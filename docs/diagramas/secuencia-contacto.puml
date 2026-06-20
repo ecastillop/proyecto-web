@@ -1,0 +1,24 @@
+@startuml secuencia-contacto
+title Envio de consulta de contacto
+
+actor Cliente
+participant "Formulario de contacto" as FRM
+participant "Servicio de contacto" as SVC
+database "Base de datos" as BD
+
+Cliente -> FRM : Completa nombre, correo, tipo y mensaje
+Cliente -> FRM : Envía consulta
+FRM -> FRM : Valida informacion en cliente
+FRM -> SVC : Transmite mensaje de contacto
+SVC -> SVC : Sanitiza y valida correo
+SVC -> BD : Guarda mensaje recibido
+BD --> SVC : Identificador del registro
+SVC --> FRM : Confirmacion de envio
+FRM --> Cliente : Muestra modal de mensaje enviado
+
+note over FRM, BD
+  Referencia tecnica: contacto.html, app.js,
+  POST contacto.php, tabla contactos
+end note
+
+@enduml

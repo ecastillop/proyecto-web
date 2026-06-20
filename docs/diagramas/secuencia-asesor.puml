@@ -1,0 +1,34 @@
+@startuml secuencia-asesor
+title Asesor de compra personalizado
+
+actor Cliente
+participant "Modulo asesor" as ASR
+participant "Servicio de recomendacion" as SVC
+database "Base de datos" as BD
+
+Cliente -> ASR : Abre asesor de compra
+
+note over ASR, BD
+  Referencia tecnica: asesor.html, app.js,
+  GET productos.php?accion=recomendar,
+  tablas productos, objetivos, preferencias
+  y tablas puente producto_objetivo / producto_preferencia
+end note
+Cliente -> ASR : Completa criterios y pulsa Ver recomendacion
+ASR -> SVC : Solicita recomendacion con criterios
+SVC -> BD : Consulta productos filtrados por precio, nivel, objetivo y preferencia
+BD --> SVC : Productos coincidentes
+SVC --> ASR : Hasta 4 recomendaciones
+ASR --> Cliente : Presenta resultados
+
+note right of ASR
+  La consulta se ejecuta al pulsar
+  Ver recomendacion
+end note
+
+opt Cliente acepta una sugerencia
+  Cliente -> ASR : Agrega producto sugerido
+  ASR -> ASR : Envia producto al carrito
+end
+
+@enduml

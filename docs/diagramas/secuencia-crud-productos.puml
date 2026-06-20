@@ -1,0 +1,35 @@
+@startuml secuencia-crud-productos
+title Gestion del catalogo por administrador
+
+actor Administrador
+participant "Panel de productos" as PNL
+participant "Servicio de catalogo" as SVC
+database "Base de datos" as BD
+
+== Alta de producto ==
+
+Administrador -> PNL : Registra nuevo producto
+PNL -> PNL : Valida datos del formulario
+PNL -> SVC : Solicita creacion en catalogo
+SVC -> BD : Inserta producto
+BD --> SVC : Producto creado
+SVC --> PNL : Confirmacion de alta
+PNL --> Administrador : Notifica producto creado
+
+== Baja logica de producto ==
+
+Administrador -> PNL : Solicita eliminar producto
+PNL --> Administrador : Pide confirmacion en modal
+Administrador -> PNL : Confirma eliminacion
+PNL -> SVC : Solicita desactivacion
+SVC -> BD : Marca producto como inactivo
+BD --> SVC : Operacion completada
+SVC --> PNL : Confirmacion de baja
+PNL --> Administrador : Notifica producto eliminado
+
+note over PNL, BD
+  Referencia tecnica: admin/productos.php,
+  modal Bootstrap, tabla productos campo activo
+end note
+
+@enduml

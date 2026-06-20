@@ -1,0 +1,35 @@
+@startuml secuencia-carrito
+title Gestion del carrito de compras
+
+actor Cliente
+participant "Interfaz de tienda" as UI
+participant "Carrito de compras" as CAR
+database "Almacen local" as LOC
+
+Cliente -> UI : Selecciona agregar producto
+UI -> CAR : Incorpora producto y cantidad
+CAR -> LOC : Persiste contenido del carrito
+CAR --> UI : Actualiza resumen y total
+UI --> Cliente : Muestra panel del carrito
+
+opt Quitar un producto
+  Cliente -> UI : Solicita quitar item
+  UI -> CAR : Elimina producto del carrito
+  CAR -> LOC : Actualiza almacen local
+  CAR --> UI : Recalcula total
+end
+
+opt Vaciar carrito completo
+  Cliente -> UI : Solicita vaciar carrito
+  UI --> Cliente : Pide confirmacion en modal
+  Cliente -> UI : Confirma accion
+  UI -> CAR : Limpia todos los items
+  CAR -> LOC : Borra datos persistidos
+end
+
+note over UI, LOC
+  Referencia tecnica: app.js, localStorage,
+  modales Bootstrap para confirmacion
+end note
+
+@enduml

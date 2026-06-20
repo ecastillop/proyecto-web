@@ -1,0 +1,28 @@
+@startuml secuencia-pedidos-admin
+title Seguimiento de pedidos por administrador
+
+actor Administrador
+participant "Panel de pedidos" as PNL
+participant "Servicio de pedidos" as SVC
+database "Base de datos" as BD
+
+Administrador -> PNL : Consulta pedidos registrados
+PNL -> SVC : Solicita listado operativo
+SVC -> BD : Obtiene pedidos ordenados por fecha
+BD --> SVC : Pedidos con cliente, total y estado
+SVC --> PNL : Listado consolidado
+PNL --> Administrador : Muestra tabla de seguimiento
+
+Administrador -> PNL : Selecciona nuevo estado del pedido
+PNL -> SVC : Solicita actualizacion de estado
+SVC -> BD : Actualiza estado del pedido
+BD --> SVC : Cambio confirmado
+SVC --> PNL : Operacion exitosa
+PNL --> Administrador : Notifica actualizacion realizada
+
+note over PNL, BD
+  Referencia tecnica: admin/pedidos.php,
+  toast de confirmacion, tabla pedidos campo estado
+end note
+
+@enduml

@@ -1,0 +1,31 @@
+@startuml secuencia-pedido
+title Registro de pedido desde el carrito
+
+actor Cliente
+participant "Interfaz de tienda" as UI
+participant "Servicio de pedidos" as SVC
+database "Base de datos" as BD
+
+Cliente -> UI : Confirma intencion de compra
+UI --> Cliente : Solicita datos de entrega en modal
+Cliente -> UI : Completa nombre, correo y datos opcionales
+UI -> SVC : Envia pedido con items del carrito
+
+SVC -> BD : Inicia transaccion
+SVC -> BD : Valida stock de cada producto
+SVC -> BD : Registra cabecera del pedido
+SVC -> BD : Registra detalle por cada item
+SVC -> BD : Descuenta stock vendido
+SVC -> BD : Confirma transaccion
+BD --> SVC : Pedido registrado con identificador
+
+SVC --> UI : Confirmacion con numero y total
+UI --> Cliente : Muestra modal de pedido exitoso
+UI -> UI : Limpia carrito del cliente
+
+note over UI, BD
+  Referencia tecnica: modal checkout en app.js,
+  POST pedidos.php, tablas pedidos y detalle_pedido
+end note
+
+@enduml

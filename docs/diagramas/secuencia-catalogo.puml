@@ -1,0 +1,21 @@
+@startuml secuencia-catalogo
+title Consulta del catalogo de productos
+
+actor Cliente
+participant "Interfaz de tienda" as UI
+participant "Servicio de catalogo" as SVC
+database "Base de datos" as BD
+
+Cliente -> UI : Ingresa a la tienda
+UI -> SVC : Solicita listado de productos activos
+SVC -> BD : Consulta productos, categorias y atributos
+BD --> SVC : Registros del catalogo
+SVC --> UI : Catalogo disponible para mostrar
+UI --> Cliente : Visualiza productos con precio y stock
+
+note over UI, BD
+  Referencia tecnica: index.html, app.js,
+  GET productos.php?accion=listar, tablas productos y categorias
+end note
+
+@enduml
